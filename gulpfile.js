@@ -6,14 +6,14 @@ var gutil         = require('gulp-util');
 
 gulp.task('scripts', function() {
     return gulp.src(
-          ['textscan/shared_funcs.js',
-          'textscan/html_inject.js',
-          'textscan/measure_canvas.js',
-          'textscan/text_processing.js',
-          'textscan/dom_collect.js',
-          'textscan/file_collect.js',
-          'textscan/ctx_worker.js',
-          'textscan/main.js'])
+          ['javascript_src/shared_funcs.js',
+          'javascript_src/html_inject.js',
+          'javascript_src/measure_canvas.js',
+          'javascript_src/text_processing.js',
+          'javascript_src/dom_collect.js',
+          'javascript_src/file_collect.js',
+          'javascript_src/ctx_worker.js',
+          'javascript_src/main.js'])
           .pipe(concat('word_tags.js'))
           .pipe(gulp.dest('dist'))
           .pipe(rename('word_tags.min.js'))
