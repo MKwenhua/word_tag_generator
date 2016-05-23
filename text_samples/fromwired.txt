@@ -1,0 +1,36 @@
+WE’VE LOST CONTROL of our web browsers. Sure, we tell them what sites to load. But after that, browsers do the bidding of someone else’s server, executing code that could, for all we know, install malware on our phones and computers to spy on our every digital move.
+And sometimes they do. In 2009, The New York Timesinadvertently served an ad that redirected readers to a page claiming that their computers were already infected with malware. It urged them to download fake antivirus software that actually hijacked their machines instead.
+Since then, the problem has only grown worse. In March, several major publishers, including the Times and the BBC, were found to be serving malicious ads. Between June 2014 and February of this year, researchers observed a 325 percent increase in malicious advertising. And that’s all to say nothing of the way websites routinely share our browsing data with advertising networks.
+“It is something with ubiquitous effects on anyone who uses the Internet,” says Yan Zhu, a 25-year-old physics major turned hacker who has spent the last three years building tools to make our browsers less credulous.
+		 
+		 
+
+Yan ZhuDAN TENTLER
+In that time, among other projects, she’s helped the Electronic Frontier Foundation build Privacy Badger, a browser plugin that blocks web trackers. The catch is that although Privacy Badger is only designed to block trackers, not ads, the ads are often blocked as a side effect. And the modern web is still heavily dependent on advertising to make money. Surfing the web has become a choice between sacrificing your privacy or undermining the way journalists and other content creators get paid.
+That’s why Zhu joined Brave Software, a company building a new web browser that blocks ads right out of box, with no need for users to install plugins or change their settings. But instead of simply blocking ads, Brave will try to replace them with ads that actually respect your privacy, and give publishers a cut of the revenue. That’s a near complete reinvention of the way browsers typically work. Not only could it shift the way publishers get paid, but it also gives you more say over what actually runs on your computer. That’s particularly important now because despite the rise of mobile apps, web browsers are still one of the most important ways we interact with the Internet. That puts Zhu at the center of several debates about the future of privacy, online anonymity and individual control over the technologies we use.
+Learning to Be Paranoid
+For Zhu, the importance of digital security and online privacy aren’t hypothetical. In 2009, Zhu met Chelsea Manning, then known as Bradley Manning, through a mutual friend in Cambridge, Massachusetts, where Zhu was a physics student at MIT. The two lost touch around the time Manning was deployed to Iraq.
+RELATED STORIES
+	•	
+	•	The Creator of JavaScript Is Out to Upend the Ad Industry  
+	•	
+	•	
+	•	Ad Blockers Are Making Money Off Ads (And Tracking, Too)  
+	•	
+	•	
+	•	I Turned Off JavaScript for a Whole Week and It Was Glorious  
+	•	 
+After Manning was arrested for leaking a large cache of diplomatic cables to Wikileaks, some of Manning’s acquaintances were questioned by the authorities, apparently under the suspicion that they had been involved in helping Manning with the leak. One student told the MIT student newspaper that he’d been questioned simply for copying Manning on a mass email soliciting advice on what brand of padlock to buy to secure a storage unit. Another student, David House, who co-founded the Bradley Manning Support Network, laterreached a settlement with the federal government after he was detained by Homeland Security in 2011 and had his computer and phone confiscated.
+Zhu says she wasn’t questioned but describes the investigation into her former classmates as baseless. “[The students] had to be a little paranoid about their email communications,” Zhu says. “That was the first time I realized that even if you haven’t done something wrong, computer security and privacy is something you should be worried about.”
+In 2012, Zhu moved to California to work on her PhD in physics at Stanford University but soon decided to take a leave of absence. “As much as I liked doing math and working on hard problems like ‘How did the world start?’, it just didn’t seem relevant enough to real people,” she says. Digital security, on other other hand, seemed like a pressing issue that could help whistleblowers and private citizens wrongly suspected of illegal activity alike.
+But her focus on the browser was something of an accident. She didn’t know much about security when she left Stanford, and had only studied basic computer programming as a physics student at MIT. “I’m probably over 90 percent self-taught,” she says.
+ADVERTISING
+
+To learn the trade, she volunteered her time fixing bugs in open source projects for the Tor Project, the team behind the popular Internet anonymity tool. She also interned for organizations such as the Freedom of Press Foundation, where she worked on SecureDrop, a tool designed to make it easier for whistleblowers to anonymously share documents with journalists, and for the Electronic Frontier Foundation.
+“Her first role at EFF was an internship,” says Peter Eckersley, the chief computer scientist, at the EFF in an email. “She didn’t start with a deep computer security background, but she learned really, really fast.”
+At the EFF, she worked on Privacy Badger and HTTPS Everywhere, which forces your browser to use secure connections to websites when one is available. Later, as an employee at Yahoo, she worked on End-to-End, a tool designed to encrypt your email within the browser before it ever touches a cloud, so that even Yahoo can’t decrypt it.
+Fighting Apathy
+Zhu landed at Brave after the company’s controversial founder–JavaScript creator and Mozilla co-founder Brendan Eich–reached out to her. She says Brave’s idea of finding a way to support journalism while still protecting readers’ privacy is what attracted her to the company. “Brave is one of the few groups trying to find a middle ground,” she says. “People can keep using ad blockers, which they seem to like, and publishers can make money.”
+But it’s going to be something of a tough sell. A coalition of publishers, including the companies behind The New York Times and the Washington Post, have threatened to sueBrave if the company goes forward with its ad replacement plan.
+But the question could remain academic unless enough users actually adopt Brave, which doesn’t have the marketing force of a company like Microsoft or Google behind it. The bigger issue, Zhu says, is getting people to care about online privacy to demand change. “I think the problem is that people will stop caring about privacy and security,” she says. “So a lot of what I work on is getting people to care abut having a more secure private web.”
+That part of her job is getting easier, though. Every time a major retailer or government website gets hacked and leaks people’s personal information online, we realize that perhaps we haven’t been careful enough. Fortunately, people like Zhu are out there helping us learn to be paranoid.

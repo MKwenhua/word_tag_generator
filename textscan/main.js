@@ -1,0 +1,170 @@
+(function(){
+  "use strict";
+
+var wordScanner = document.createElement('div');
+wordScanner.id = 'cheesyGorditaCrunch';
+wordScanner.className = 'not_on';
+wordScanner.innerHTML = _htmlStringsZZ66();
+document.body.appendChild(wordScanner);
+var visBlock     = wordScanner.querySelector('#visBlockPete');
+var buttNav      = wordScanner.querySelector('.tacoSideNav');
+var ctxTool      = _canvasCalcThingZZ66(wordScanner);
+var sendToWorker = _setWorkerZZ66(ctxTool,visBlock);
+var filez        = _fileModuleZZ66(wordScanner);
+var scanner      = wordScanner.querySelector('#ZZ66_sl_tc');
+var _tools       = new _usefulFunctionsTaco;
+var taggs        = {current: null, tagLists: []};
+var wordAnalysis = _wordAnalysisZZ66(sendToWorker, ctxTool, function(nTag){
+	taggs.current = nTag;
+	taggs.tagLists.push(nTag);
+});
+var proccessDom  = _domReadZZ66(wordAnalysis);
+function toggleNav(){
+  	var b = buttNav.querySelector('.bt1_taco_show');
+    if(b){b.classList.remove('bt1_taco_show');}
+};
+function TextHighligher() {
+    window.addEventListener("mouseup", this, false);
+}
+function getHighlightedTxt() {
+    var parentEl = null, sel;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.rangeCount) {
+            parentEl = sel.getRangeAt(0).commonAncestorContainer;
+            if (parentEl.nodeType != 1) {
+                parentEl = parentEl.parentNode;
+            }
+        }
+    } else if ( (sel = document.selection) && sel.type != "Control") {
+        parentEl = sel.createRange().parentElement();
+    }
+    return parentEl.textContent;
+}
+function TextHighligher() {
+    window.addEventListener("mouseup", this, false);
+}
+TextHighligher.prototype.getHighlightedTxt = function(){
+	 var parentEl = null, sel;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.rangeCount) {
+            parentEl = sel.getRangeAt(0).commonAncestorContainer;
+            if (parentEl.nodeType != 1) {
+                parentEl = parentEl.parentNode;
+            }
+        }
+    } else if ( (sel = document.selection) && sel.type != "Control") {
+        parentEl = sel.createRange().parentElement();
+    }
+    return parentEl.textContent;
+}
+TextHighligher.prototype.highlightOn = false;
+TextHighligher.prototype.selectedText = '';
+TextHighligher.prototype.turnOff = function(){
+		this.highlightOn = false;
+
+};
+TextHighligher.prototype.turnOn = function(){
+    this.highlightOn = true;
+    wordScanner.className = 'scan_on';
+	};
+
+TextHighligher.prototype.handleEvent = function(e) {
+    if(this.highlightOn){
+    		var txtHlt =  this.getHighlightedTxt();// window.getSelection().baseNode.textContent;
+     		if(txtHlt.length > 10){
+     			this.selectedText = txtHlt;
+     			console.log('textHiglighter.selectedText',this.selectedText);
+     			scanner.classList.add("can_scan_zz66");
+     		}
+    }
+};
+var textHiglighter = new TextHighligher();
+
+
+function repaintWords(){
+   ctxTool.recalc();
+   taggs.current.redo();
+};
+
+_tools.addDebounce(window, repaintWords, 50, 'resize');
+wordScanner.querySelector('img').onclick = function(){
+   if(wordScanner.classList.contains('not_on')){
+     wordScanner.className = 'is_on';
+   }else{
+     wordScanner.className = 'not_on';
+   }
+};
+wordScanner.querySelector('#peteTacoZZ').onclick = function(){
+    visBlock.className = 'on_load_Z66';
+    proccessDom();
+};
+function checkScanner(){
+	if(scanner.classList.contains('off_sele_t')){
+     scanner.classList.remove('off_sele_t');
+     scanner.classList.add('on_sele_t');
+     textHiglighter.turnOn();
+    }
+	if(scanner.classList.contains('can_scan_zz66')){
+    scanner.className = "selectIcon_taco off_sele_t";
+		wordScanner.className = 'is_on';
+    visBlock.className = 'on_results_Z66';
+		textHiglighter.highlightOn = false;
+    wordAnalysis( textHiglighter.selectedText, false,'HTML SCAN');
+    console.log('tags',taggs);
+ 	};
+
+};
+_tools.addDebounce(scanner, checkScanner, 200, 'click');
+
+wordScanner.querySelector('#list_taco').onclick = function(e){
+     if(e.target.tagName === 'LI'){
+          if(e.target.dataset.clicked === 'no'){
+            e.preventDefault();
+             e.target.dataset.clicked = 'yes';
+             toggleNav();
+             visBlock.className = 'on_results_Z66';
+             buttNav.querySelector('.bt1_taco').classList.add('bt1_taco_show');
+             wordAnalysis( filez[e.target.dataset.objurl], false,e.target.dataset.objurl);
+             console.log('tags',taggs);
+
+           }
+      }
+};
+buttNav.onclick = function(e){
+  if(!e.target.classList.contains('bt1_taco_show')){
+  toggleNav();
+    switch(e.target.dataset.wh) {
+      case 'canvas':
+        visBlock.className = 'on_results_Z66';
+        e.target.classList.add('bt1_taco_show');
+        break;
+      case 'files':
+        visBlock.querySelector('.z66_settings').className = "z66_settings set_to_file_read";
+        e.target.classList.add('bt1_taco_show');
+        visBlock.className = 'on_set_up_Z66';
+        break;
+      case 'html':
+        visBlock.querySelector('.z66_settings').className = "z66_settings set_to_body_read";
+        e.target.classList.add('bt1_taco_show');
+        visBlock.className = 'on_set_up_Z66';
+        break;
+      case 'wordtags':
+        visBlock.querySelector('.pete_demo_settings').className = 'pete_demo_settings stage_hide';
+        visBlock.querySelector('.current_tags_images').className = 'current_tags_images stage_show';
+        e.target.classList.add('bt1_taco_show');
+        visBlock.className = 'manage_Z66';
+        break;
+      case 'config':
+        e.target.classList.add('bt1_taco_show');
+        visBlock.querySelector('.current_tags_images').className = 'current_tags_images stage_hide';
+        visBlock.querySelector('.pete_demo_settings').className = 'pete_demo_settings stage_show';
+        visBlock.className = 'manage_Z66';
+        break;
+      default:
+         console.log('hey');
+    }
+  }
+  };
+})();

@@ -1,0 +1,22 @@
+{
+  "name": "word_tag_generator",
+  "version": "1.0.0",
+  "description": "A bookmarklet that creates word tags",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MKwenhua/word_tag_generator.git"
+  },
+  "author": "Peter Halloran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MKwenhua/word_tag_generator/issues"
+  },
+  "homepage": "https://github.com/MKwenhua/word_tag_generator#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
