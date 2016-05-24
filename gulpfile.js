@@ -17,7 +17,7 @@ gulp.task('scripts', function() {
           'javascript_src/main.js'])
           .pipe(concat('word_tags.js'))
           .pipe(gulp.dest('dist'))
-          .pipe(rename('word_tags.min.js'))
-          .pipe(uglify().on('error', gutil.log))
-          .pipe(gulp.dest('dist'));
+        //  .pipe(rename('word_tags.min.js'))
+          //.pipe(uglify().on('error', gutil.log))
+          //.pipe(gulp.dest('dist'));
 });
