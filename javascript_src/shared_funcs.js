@@ -1,9 +1,8 @@
 (function (window) { 
 	'use strict';
-window.wordScan = window.wordScan || {};
-window.wordScan.tools = function(){
-
-	function throttle (callback, limit) {
+ window.wordScan = window.wordScan || {};
+ function FsTools(){
+	 this.throttle = function(callback, limit) {
 	    var wait = false;
 	    return function () {
 	        if (!wait) { 
@@ -15,7 +14,7 @@ window.wordScan.tools = function(){
 	        }
 	    }
 	} 
-	function debounce(func, wait, immediate) {
+	this.debounce = function(func, wait, immediate) {
 			var timeout;
 			return function() {
 				var context = this, args = arguments;
@@ -27,16 +26,13 @@ window.wordScan.tools = function(){
 								if (immediate && !timeout) func.apply(context, args);
 				};
 		};
-		this.addDebounce = function(elem, func, time, type){
-			
-				elem.addEventListener(type, debounce(func, time));
-		};
-		this.addThrottle = function(elem, func){
-			//	var throttledResize = throttle(func, 100);
-				//window.addEventListener('resize', throttledResize);
-				window.addEventListener('resize', func);
-		};
-
-};
+	};
+	FsTools.prototype.addDebounce = function(elem, func, time, type){
+				elem.addEventListener(type, this.debounce(func, time));
+	};
+	FsTools.prototype.addThrottle = function(elem, func, time, type){
+			elem.addEventListener(type, this.debounce(func, time));
+	};
+ window.wordScan.tools = new FsTools();
 
 })(window);

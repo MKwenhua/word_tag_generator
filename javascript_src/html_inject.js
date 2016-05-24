@@ -1,7 +1,7 @@
 (function (window) { 
 	'use strict';
-window.wordScan = window.wordScan || {};
-window.wordScan.htmlInject = function(){ 
+	window.wordScan = window.wordScan || {};
+	window.wordScan.htmlInject = function(){ 
 	
   	var _selectButtonZZ66 = [
   	'<div id="ZZ66_sl_tc" data-tk="ZZ66" class="selectIcon_taco off_sele_t">',
@@ -59,11 +59,11 @@ window.wordScan.htmlInject = function(){
 
     var visBlockzz66 = [ 
     '<div data-tk="ZZ66" id="visBlockPete" class="on_set_up_Z66 start_Z66">',
-			_sideNavZZ66 ,
-			settingsZZ66,
-			loadingDivZZ66,
-			canvasInnerZZ66,
-			manageBlock,
+				_sideNavZZ66 ,
+				settingsZZ66,
+				loadingDivZZ66,
+				canvasInnerZZ66,
+				manageBlock,
 		'</div>'].join(''); 
 
     return ['<img data-tk="ZZ66" height="74" width="100" src="https://scredisapi-scgraph.rhcloud.com/gordita_crunch.png">',
