@@ -24,12 +24,22 @@
     text-align: center;
   }
   .tag_previewZZ66{
-  	display:inline-block;
-  	width: 80px;
-  	height:60px;
-  	cursor: pointer;
-  	margin:8px;
+  	display: inline-block;
+    width: 150px;
+    /* height: 60px; */
+    cursor: pointer;
+    margin: 8px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 8px 0px;
+    overflow: hidden;
+  	
   }
+  .tag_previewZZ66:hover {
+    background: white;
+	}
+
   .bt1_taco{
     width: 100%;
     padding: 10px 0px;

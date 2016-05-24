@@ -4,7 +4,9 @@
 	window.wordScan = window.wordScan || {};
 
 	function wordTagHtml(nm){
-		return ['<div data-keyy="', nm,'" class="tag_previewZZ66">',nm,'</div>'].join('');
+		return ['<div data-keyy="', nm,'" class="tag_previewZZ66">',
+		nm.split('.')[0].replace(/[_-]/g, ' '),
+		'</div>'].join('');
 	};
 
 	window.wordScan.taggs = {
@@ -25,7 +27,7 @@
 					break;
 				case 'DOM_Content':
 					this.domReads += 1;
-					_nm = 'HTML_SCAN_'+ String(this.domReads);
+					_nm = 'DOM_'+ String(this.domReads);
 					break;
 				default:
 					this.fileReads += 1;
@@ -37,9 +39,9 @@
 			this.current = tagg;
 			this.htmlStrings[tagg.namee] = wordTagHtml(tagg.namee);
 			var htmls = this.htmlStrings;
-      this.tagContainer.innerHTML = this.tagNameLists.reduce(function(strA, keyy){
-				return strA.push(htmls[keyy]);
-			},[]).join('');
+      this.tagContainer.innerHTML = this.tagNameLists.reduce(function(str, keyy){
+				return str + htmls[keyy];
+			},'');
 
 		},
 		addTag: function(tagg, name) {
