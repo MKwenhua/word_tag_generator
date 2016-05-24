@@ -53,7 +53,9 @@
 
     var configCanvasZZ66 = '<div data-tk="ZZ66" class="pete_demo_settings"><h6>Settings comming soon</h6></div>';
 
-  var creditsDivZZ66 = ['<div class="current_tags_images">', 'Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" ',
+  var creditsDivZZ66 = ['<div class="current_tags_images">','<div id="wordTagWrap">',
+  	'<h3>No History</h3>','</div>',
+  	'Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" ',
     'title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"',
     ' title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>','</div>'
     ].join('');

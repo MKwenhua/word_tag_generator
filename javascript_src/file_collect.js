@@ -1,7 +1,10 @@
 (function (window) {
 	'use strict';
+
 	window.wordScan = window.wordScan || {};
+
 	window.wordScan.fileReadSet = function(parEle) {
+		
 		var output_to = parEle.querySelector('#list_taco');
 		var dropZone = parEle.querySelector('#drop_zone_taco');
 		var fileTexts = {};

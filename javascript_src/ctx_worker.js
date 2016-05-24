@@ -1,8 +1,12 @@
 (function (window) {
 	'use strict';
+
 	window.wordScan = window.wordScan || {};
+
 	window.wordScan.workerSet = function(ctxTool, visBlock) {
+
 	var _worker = new Worker(window.URL.createObjectURL(new Blob([function() {
+
 		self.addEventListener("message", function(e) {
 			var data     = JSON.parse(e.data);
 			console.log('in worker',data);
@@ -81,10 +85,13 @@
 			checkIntegrity(passObject);
 
 
-		self.postMessage(JSON.stringify(passObject));
+			//Send Back Instructions
+			self.postMessage(JSON.stringify(passObject));
 
 
 		}, false);
+  
+  
 	}.toString().split('\n').slice(1,-1).join('\n')],{type:'text/javascript'})));
 
 	_worker.addEventListener('message',function(event) {

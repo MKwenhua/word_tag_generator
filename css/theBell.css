@@ -19,6 +19,17 @@
     text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px;
     border: 2px solid #09c!important;
   }
+  #wordTagWrap{
+    width: 100%;
+    text-align: center;
+  }
+  .tag_previewZZ66{
+  	display:inline-block;
+  	width: 80px;
+  	height:60px;
+  	cursor: pointer;
+  	margin:8px;
+  }
   .bt1_taco{
     width: 100%;
     padding: 10px 0px;

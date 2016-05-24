@@ -1,5 +1,6 @@
 (function (window) {
 	'use strict';
+
 	window.wordScan = window.wordScan || {};
 
 	window.wordScan.textProcSet = function(sendToWorker,ctxTool) {
@@ -9,8 +10,8 @@
 		}
 
 		function updater(nTag) {
-			window.wordScan.taggs.current = nTag;
-			window.wordScan.taggs.tagLists.push(nTag);
+			window.wordScan.taggs.addTag(nTag,nTag.namee);
+			
 		};
 
 		function CountThing() {
@@ -35,6 +36,7 @@
 				sendToWorker(this.txtHash);
 			};
 		};
+
 		function countAholic(obb, word) {
 			obb[word] = obb[word] === undefined ? 1 : obb[word] + 1; maxFq.check_mx(obb[word]);
 				return obb;

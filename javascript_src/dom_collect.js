@@ -1,6 +1,6 @@
 (function (window) {
 	'use strict';
-	
+
 	window.wordScan = window.wordScan || {};
 
 	window.wordScan.domReadSet = function(wordCount) {
@@ -12,7 +12,7 @@
 						var tx = arr[ind].innerText.toLowerCase().match(/([a-z]+)/g);
 						getText(arr, tx ? str.concat(tx) : str, ind + 1, len);
 					} else {
-						wordCount(str, true, 'domBody');
+						wordCount(str, true, 'DOM_Content');
 					}
 			};
 

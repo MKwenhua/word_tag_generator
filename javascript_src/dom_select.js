@@ -1,7 +1,9 @@
 
 (function (window) {
 	'use strict';
+
 	window.wordScan = window.wordScan || {};
+
 	window.wordScan.selecter = function(scanner,wordScanner) {
 
 	function getHighlightedTxt() {
@@ -60,6 +62,9 @@
 			}
 		}
 	};
+	
 	return new TextHighligher();
+	
 	};
+
 })(window);

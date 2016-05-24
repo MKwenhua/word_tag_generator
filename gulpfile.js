@@ -6,7 +6,8 @@ var gutil         = require('gulp-util');
 
 gulp.task('scripts', function() {
     return gulp.src(
-          ['javascript_src/shared_funcs.js',
+          ['javascript_src/tag_model.js',
+          'javascript_src/shared_funcs.js',
           'javascript_src/html_inject.js',
           'javascript_src/canvas_measure.js',
           'javascript_src/text_processing.js',

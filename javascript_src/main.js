@@ -1,6 +1,8 @@
 (function(window){
   "use strict";
-  window.wordScan.taggs   = {current: null, tagLists: []};
+
+  //window.wordScan.taggs   = {current: null, tagLists: []};
+
 	var wordScanner = document.createElement('div');
 	wordScanner.id = 'cheesyGorditaCrunch';
 	wordScanner.className = 'not_on';
@@ -15,13 +17,13 @@
 	var wordAnalysis   = window.wordScan.textProcSet(sendToWorker, ctxTool);
 	var textHiglighter = window.wordScan.selecter(scanner,wordScanner);
 	var proccessDom    = window.wordScan.domReadSet(wordAnalysis);
-
+  window.wordScan.tagContainer = wordScanner.querySelector('#wordTagWrap');
+  
 	function toggleNav() {
 		var b = buttNav.querySelector('.bt1_taco_show');
 		if (b) {b.classList.remove('bt1_taco_show');}
 	};
-
-
+  
 	function repaintWords() {
 		ctxTool.recalc();
 		window.wordScan.taggs.current.redo();
@@ -111,5 +113,5 @@
 			}
 		}
 	};
-	
+
 })(window);
