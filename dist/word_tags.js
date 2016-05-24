@@ -619,8 +619,8 @@
 	var wordAnalysis   = window.wordScan.textProcSet(sendToWorker, ctxTool);
 	var textHiglighter = window.wordScan.selecter(scanner,wordScanner);
 	var proccessDom    = window.wordScan.domReadSet(wordAnalysis);
-  window.wordScan.tagContainer = wordScanner.querySelector('#wordTagWrap');
-  
+  window.wordScan.taggs.tagContainer = wordScanner.querySelector('#wordTagWrap');
+
 	function toggleNav() {
 		var b = buttNav.querySelector('.bt1_taco_show');
 		if (b) {b.classList.remove('bt1_taco_show');}
