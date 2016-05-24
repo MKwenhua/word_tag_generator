@@ -51,7 +51,11 @@
     '</div>'
     ].join('');
 
-    var configCanvasZZ66 = '<div data-tk="ZZ66" class="pete_demo_settings"><h6>Settings comming soon</h6></div>';
+  var configCanvasZZ66 = [
+  '<div data-tk="ZZ66" class="pete_demo_settings">',
+  	'<form><input type="color" name="favcolor" value="#ff0000"></form>',
+  	'<h6>Settings comming soon</h6>',
+  '</div>'].join('');
 
   var creditsDivZZ66 = ['<div class="current_tags_images">','<div id="wordTagWrap">',
   	'<h3>No History</h3>','</div>',
