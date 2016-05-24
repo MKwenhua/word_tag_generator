@@ -1,7 +1,10 @@
 (function (window) {
 	'use strict';
+
 	window.wordScan = window.wordScan || {};
+
 	window.wordScan.canvasSet = function(parentEle) {
+		
 		var theCanvas = parentEle.querySelector('#wdFQcx');
 		var ctx       = theCanvas.getContext("2d");
 		var linkBox   = parentEle.querySelector('.c_d_taco');
