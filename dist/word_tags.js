@@ -415,7 +415,6 @@
 	          var maxCount = data.themax;
 	          var ratios   = data.ratios;
 	          var mxWid    = data.cWidth;
-	          var abc  = 'abcdefghijklmnopqrstuvwxyz'.split('');
 	          function capitalize(v){
 	           return v.charAt(0).toUpperCase() + v.slice(1);
 	          };
@@ -431,24 +430,20 @@
 	         	var allwords =  Object.keys(theWords);
 	 
 	          var passObject = {
-	            allRatios: 0,
-	            total_words: allwords.length,
-	            eachWord: {},
-	            wordLines: [[]],
-	            lineWids: []
+	            		allRatios: 0,
+	            		total_words: allwords.length,
+	            		eachWord: {},
+	            		wordLines: [[]],
+	            		lineWids: []
 	             };
-	          var atLine = 0;
-	          var maxFont = 0;
-	          var width_used = 0;
-	          var line_count = 1;
-	          var level_space = 2;
+	          var atLine = 0, maxFont = 0, width_used = 0,line_count = 1,level_space = 2;
+	        
 	          var maxHeight = Math.floor((mxWid - 50)/((allwords.length/maxCount) + 1));
 	          if(mxWid < 450 && maxHeight < 50){ maxHeight = 50;}
 	          if(mxWid > 950 && maxHeight < 40){ maxHeight = 40;}
 	          maxHeight = maxHeight > 80 ? 80 : maxHeight;
 	          var array_of_maxes = [];
 	         
-	          var allLetters = 0;
 	          function calcSpace(wid){
 	            level_space = level_space + maxFont;
 	            array_of_maxes.push(maxFont);
@@ -463,7 +458,6 @@
 	            var tat = 2;
 	            var fs = Math.ceil(maxHeight * (theWords[key]/maxCount));
 	        
-	            allLetters += key.length;
 	            key.split('').forEach(function(l){
 	              tat += (ratios[l] * fs);
 	            });
@@ -489,7 +483,6 @@
 	            passObject.wordLines[atLine].push(wordInfo);
 	            line_count++;
 	          });
-	          passObject.allL = allLetters;
 	          passObject.allM = array_of_maxes;
 	          checkIntegrity(passObject);
 
