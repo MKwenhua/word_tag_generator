@@ -49,39 +49,38 @@
 	};
 
 	function CanvasTool(){
-
 		this.ratios = getRatios();
 		this.changeFont = function(newFNT){
-		ctx.font = newFNT;
-		this.ratios = getRatios();
-	};
-	this.recalc = calcDimensions;
-	this.getWidth = function(){
+			ctx.font = newFNT;
+			this.ratios = getRatios();
+		};
+		this.recalc = calcDimensions;
+		this.getWidth = function(){
 			return theCanvas.width;
-	};
-	this.paintResults = function(dta, visBlock){
-		var res = JSON.parse(dta);
+		};
+		this.paintResults = function(dta, visBlock){
+			var res = JSON.parse(dta);
 
-		console.log('paintResults',res);
-		var h = res.lineWids[res.lineWids.length - 1][2] + 15;
-		h = h > maxHeight ? maxHeight : h;
-		theCanvas.height = h;
-		ctx.fillStyle = "#ffffff";
-		ctx.fillRect(0,0,theCanvas.width,h);
-		paintWords(res.wordLines, res.lineWids,0,function(){
-		linkBox.innerHTML = 'Click to download Image';
-		linkBox.dataset.haslk = 'notmade';
-		visBlock.className = 'on_results_Z66';
-	});
-};
-};
+			console.log('paintResults',res);
+			var h = res.lineWids[res.lineWids.length - 1][2] + 15;
+			h = h > maxHeight ? maxHeight : h;
+			theCanvas.height = h;
+			ctx.fillStyle = "#ffffff";
+			ctx.fillRect(0,0,theCanvas.width,h);
+			paintWords(res.wordLines, res.lineWids,0,function(){
+				linkBox.innerHTML = 'Click to download Image';
+				linkBox.dataset.haslk = 'notmade';
+				visBlock.className = 'on_results_Z66';
+			});
+		};
+	};
 		linkBox.onclick = function(){
 			if(linkBox.dataset.haslk === 'notmade'){
 				var imgBlob = addLink();
 				linkBox.innerHTML = ['<a download="wordtags.jpg" href="',imgBlob,'"> Download Word Tag</a>'].join('');
 				linkBox.dataset.haslk = 'linkthere';
-		}
-	};
+			}
+		};
 	return new CanvasTool;
 	};
 

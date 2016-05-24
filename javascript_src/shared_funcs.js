@@ -1,7 +1,7 @@
 (function (window) {
 	'use strict';
- window.wordScan = window.wordScan || {};
- function FsTools(){
+	window.wordScan = window.wordScan || {};
+	function FsTools(){
 		this.throttle = function(callback, limit) {
 			var wait = false;
 			return function () {
@@ -33,6 +33,7 @@
 	FsTools.prototype.addThrottle = function(elem, func, time, type){
 			elem.addEventListener(type, this.debounce(func, time));
 	};
- window.wordScan.tools = new FsTools();
+
+	window.wordScan.tools = new FsTools();
 
 })(window);

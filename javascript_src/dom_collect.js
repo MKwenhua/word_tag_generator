@@ -16,7 +16,7 @@
 					var x = document.body.querySelectorAll('DIV');
 					getText(x, [] ,0, x.length);
 				})();
-	   }
+		}
 	};
 
 
