@@ -8,79 +8,25 @@ wordScanner.innerHTML = wordScan.htmlInject();
 document.body.appendChild(wordScanner);
 var visBlock     = wordScanner.querySelector('#visBlockPete');
 var buttNav      = wordScanner.querySelector('.tacoSideNav');
+var scanner      = wordScanner.querySelector('#ZZ66_sl_tc');
 var ctxTool      = wordScan.canvasSet(wordScanner);
 var sendToWorker = wordScan.workerSet(ctxTool,visBlock);
 var filez        = wordScan.fileReadSet(wordScanner);
-var scanner      = wordScanner.querySelector('#ZZ66_sl_tc');
 var _tools       = new wordScan.tools();
 wordScan.taggs   = {current: null, tagLists: []};
 var wordAnalysis = wordScan.textProcSet(sendToWorker, ctxTool, function(nTag){
 	window.wordScan.taggs.current = nTag;
 	window.wordScan.taggs.tagLists.push(nTag);
 });
+
 var proccessDom  = wordScan.domReadSet(wordAnalysis);
 function toggleNav(){
   	var b = buttNav.querySelector('.bt1_taco_show');
     if(b){b.classList.remove('bt1_taco_show');}
 };
-function TextHighligher() {
-    window.addEventListener("mouseup", this, false);
-}
-function getHighlightedTxt() {
-    var parentEl = null, sel;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.rangeCount) {
-            parentEl = sel.getRangeAt(0).commonAncestorContainer;
-            if (parentEl.nodeType != 1) {
-                parentEl = parentEl.parentNode;
-            }
-        }
-    } else if ( (sel = document.selection) && sel.type != "Control") {
-        parentEl = sel.createRange().parentElement();
-    }
-    return parentEl.textContent;
-}
-function TextHighligher() {
-    window.addEventListener("mouseup", this, false);
-}
-TextHighligher.prototype.getHighlightedTxt = function(){
-	 var parentEl = null, sel;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.rangeCount) {
-            parentEl = sel.getRangeAt(0).commonAncestorContainer;
-            if (parentEl.nodeType != 1) {
-                parentEl = parentEl.parentNode;
-            }
-        }
-    } else if ( (sel = document.selection) && sel.type != "Control") {
-        parentEl = sel.createRange().parentElement();
-    }
-    return parentEl.textContent;
-}
-TextHighligher.prototype.highlightOn = false;
-TextHighligher.prototype.selectedText = '';
-TextHighligher.prototype.turnOff = function(){
-		this.highlightOn = false;
 
-};
-TextHighligher.prototype.turnOn = function(){
-    this.highlightOn = true;
-    wordScanner.className = 'scan_on';
-	};
 
-TextHighligher.prototype.handleEvent = function(e) {
-    if(this.highlightOn){
-    		var txtHlt =  this.getHighlightedTxt();// window.getSelection().baseNode.textContent;
-     		if(txtHlt.length > 10){
-     			this.selectedText = txtHlt;
-     			console.log('textHiglighter.selectedText',this.selectedText);
-     			scanner.classList.add("can_scan_zz66");
-     		}
-    }
-};
-var textHiglighter = new TextHighligher();
+var textHiglighter = new wordScan.selecter(scanner);
 
 
 function repaintWords(){
@@ -116,8 +62,8 @@ function checkScanner(){
  	};
 
 };
-_tools.addDebounce(scanner, checkScanner, 200, 'click');
 
+_toolz.addDebounce(scanner, checkScanner, 200, 'click');
 wordScanner.querySelector('#list_taco').onclick = function(e){
      if(e.target.tagName === 'LI'){
           if(e.target.dataset.clicked === 'no'){
