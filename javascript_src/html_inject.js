@@ -1,7 +1,8 @@
 (function (window) { 
 	'use strict';
-
-var _htmlStringsZZ66 = function(){ 
+window.wordScan = window.wordScan || {};
+window.wordScan.htmlInject = function(){ 
+	
   	var _selectButtonZZ66 = [
   	'<div id="ZZ66_sl_tc" data-tk="ZZ66" class="selectIcon_taco off_sele_t">',
     		'<img data-tk="ZZ66" width="70" height="40" style="width:70px;height:40px;"  src="https://canvasmp3.s3.amazonaws.com/select_txt.png">',
@@ -68,6 +69,5 @@ var _htmlStringsZZ66 = function(){
     return ['<img data-tk="ZZ66" height="74" width="100" src="https://scredisapi-scgraph.rhcloud.com/gordita_crunch.png">',
     '<p>Close</p>',_selectButtonZZ66 ,'<div data-tk="ZZ66" class="fqWordsTaco">', visBlockzz66 ,'</div>'].join('');
   };
-  window.wordScan = window.wordScan || {};
-	window.wordScan.htmlInject = _htmlStringsZZ66;
+
 })(window);

@@ -11,6 +11,7 @@ gulp.task('scripts', function() {
           'javascript_src/measure_canvas.js',
           'javascript_src/text_processing.js',
           'javascript_src/dom_collect.js',
+          'javascript_src/dom_select.js',
           'javascript_src/file_collect.js',
           'javascript_src/ctx_worker.js',
           'javascript_src/main.js'])
