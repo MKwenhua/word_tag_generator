@@ -1,7 +1,7 @@
 (function (window) { 
 	'use strict';
-
-var _domReadZZ66 = function(wordCount){
+window.wordScan = window.wordScan || {};
+window.wordScan.domReadSet = function(wordCount){
 	return function(){ 
       function getText(arr,str ,ind, len){
 				if(ind < len){
@@ -19,6 +19,5 @@ var _domReadZZ66 = function(wordCount){
    }
 };
 
- window.wordScanSet = window.wordScanSet || {};
- window.wordScanSet.domReadSetter = _domReadZZ66;
+
 })(window);

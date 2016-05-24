@@ -1,7 +1,7 @@
 (function (window) { 
 	'use strict';
-
-function _canvasCalcThingZZ66(parentEle){
+window.wordScanSet = window.wordScanSet || {};
+window.wordScanSet.canvasSet = function(parentEle){
   var theCanvas = parentEle.querySelector('#wdFQcx');
   var ctx       = theCanvas.getContext("2d");
   var linkBox   = parentEle.querySelector('.c_d_taco');
@@ -84,6 +84,5 @@ function _canvasCalcThingZZ66(parentEle){
   }; 
  return new CanvasTool;
 };
- window.wordScanSet = window.wordScanSet || {};
- window.wordScanSet.canvasSetter = _canvasCalcThingZZ66;
+
 })(window);

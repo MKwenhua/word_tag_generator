@@ -1,6 +1,7 @@
 (function (window) { 
 	'use strict';
-var _setWorkerZZ66 = function(ctxTool, visBlock){
+ window.wordScanSet = window.wordScanSet || {};
+ window.wordScanSet.workerSet = function(ctxTool, visBlock){
     var _worker =new Worker(window.URL.createObjectURL(new Blob([function(){
      self.addEventListener("message", function(e) {
          var data     = JSON.parse(e.data);
@@ -104,6 +105,5 @@ var _setWorkerZZ66 = function(ctxTool, visBlock){
     }
 };
 
- window.wordScanSet = window.wordScanSet || {};
- window.wordScanSet.workerSetter = _setWorkerZZ66;
+
 })(window);

@@ -1,6 +1,7 @@
 (function (window) { 
 	'use strict';
-var _fileModuleZZ66 = function(parEle){ 
+ window.wordScan = window.wordScanSet || {};
+ window.wordScan.fileReadSet = function(parEle){ 
 	var output_to = parEle.querySelector('#list_taco');
 	var dropZone = parEle.querySelector('#drop_zone_taco');
 	var fileTexts = {};
@@ -48,6 +49,5 @@ var _fileModuleZZ66 = function(parEle){
     return fileTexts;
 
 };
- window.wordScan = window.wordScanSet || {};
- window.wordScan.fileReadSetter = _fileModuleZZ66;
+
 })(window);

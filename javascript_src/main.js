@@ -8,17 +8,17 @@ wordScanner.innerHTML = wordScan.htmlInject();
 document.body.appendChild(wordScanner);
 var visBlock     = wordScanner.querySelector('#visBlockPete');
 var buttNav      = wordScanner.querySelector('.tacoSideNav');
-var ctxTool      = wordScan.canvasSetter(wordScanner);
-var sendToWorker = wordScan.workerSetter(ctxTool,visBlock);
-var filez        = wordScan.fileReadSetter(wordScanner);
+var ctxTool      = wordScan.canvasSet(wordScanner);
+var sendToWorker = wordScan.workerSet(ctxTool,visBlock);
+var filez        = wordScan.fileReadSet(wordScanner);
 var scanner      = wordScanner.querySelector('#ZZ66_sl_tc');
 var _tools       = new wordScan.tools();
-window.wordScan.taggs   = {current: null, tagLists: []};
+wordScan.taggs   = {current: null, tagLists: []};
 var wordAnalysis = wordScan.textProcSet(sendToWorker, ctxTool, function(nTag){
 	window.wordScan.taggs.current = nTag;
 	window.wordScan.taggs.tagLists.push(nTag);
 });
-var proccessDom  = wordScan.domReadSetter(wordAnalysis);
+var proccessDom  = wordScan.domReadSet(wordAnalysis);
 function toggleNav(){
   	var b = buttNav.querySelector('.bt1_taco_show');
     if(b){b.classList.remove('bt1_taco_show');}
@@ -85,7 +85,7 @@ var textHiglighter = new TextHighligher();
 
 function repaintWords(){
    ctxTool.recalc();
-   taggs.current.redo();
+   wordScan.taggs.current.redo();
 };
 
 _tools.addDebounce(window, repaintWords, 50, 'resize');
@@ -112,7 +112,7 @@ function checkScanner(){
     visBlock.className = 'on_results_Z66';
 		textHiglighter.highlightOn = false;
     wordAnalysis( textHiglighter.selectedText, false,'HTML SCAN');
-    console.log('tags',taggs);
+    console.log('tags',wordScan.taggs);
  	};
 
 };
@@ -127,7 +127,7 @@ wordScanner.querySelector('#list_taco').onclick = function(e){
              visBlock.className = 'on_results_Z66';
              buttNav.querySelector('.bt1_taco').classList.add('bt1_taco_show');
              wordAnalysis( filez[e.target.dataset.objurl], false,e.target.dataset.objurl);
-             console.log('tags',taggs);
+             console.log('tags',wordScan.taggs);
 
            }
       }
