@@ -1,7 +1,7 @@
-(function (window) { 
+(function (window) {
 	'use strict';
-	 window.wordScan = window.wordScan || {};
-	 window.wordScan.fileReadSet = function(parEle){ 
+	window.wordScan = window.wordScan || {};
+	window.wordScan.fileReadSet = function(parEle){
 		var output_to = parEle.querySelector('#list_taco');
 		var dropZone = parEle.querySelector('#drop_zone_taco');
 		var fileTexts = {};
@@ -24,34 +24,34 @@
 				evt.stopPropagation();
 				evt.preventDefault();
 
-	      var files = evt.dataTransfer.files;
-	      var output = [];
+				var files = evt.dataTransfer.files;
+				var output = [];
 
-	      for (var i = 0, f; f = files[i]; i++) {
-	        if(txtRegex.test(encodeURI(f.name))){
-	          readFile(f, encodeURI(f.name));
-	          
-	          output.push('<li data-clicked="no" data-objurl="',
-	          encodeURI(f.name),'">',
-	          f.name.split('.')[0].split('_').join(' '), '</li>');
+				for (var i = 0, f; f = files[i]; i++) {
+					if(txtRegex.test(encodeURI(f.name))){
+						readFile(f, encodeURI(f.name));
 
-	        }else{console.log('only Text files');}
-	      };
-	         
-	    output_to.innerHTML = ['<ul class="notificationLists">', output.join(''), '</ul>'].join('');
-	    
-	    };
+						output.push('<li data-clicked="no" data-objurl="',
+						encodeURI(f.name),'">',
+						f.name.split('.')[0].split('_').join(' '), '</li>');
 
-	    function handleDragOver(evt) {
-	      evt.stopPropagation();
-	      evt.preventDefault();
-	      evt.dataTransfer.dropEffect = 'copy';
-	    }
-	  
-	    dropZone.addEventListener('dragover', handleDragOver, false);
-	    dropZone.addEventListener('drop', handleFileSelect, false);
-	    return fileTexts;
+					}else{console.log('only Text files');}
+				};
+
+		output_to.innerHTML = ['<ul class="notificationLists">', output.join(''), '</ul>'].join('');
 
 	};
+
+		function handleDragOver(evt) {
+			evt.stopPropagation();
+			evt.preventDefault();
+			evt.dataTransfer.dropEffect = 'copy';
+		}
+
+		dropZone.addEventListener('dragover', handleDragOver, false);
+		dropZone.addEventListener('drop', handleFileSelect, false);
+			return fileTexts;
+
+};
 
 })(window);
