@@ -81,8 +81,9 @@ function _canvasCalcThingZZ66(parentEle){
       linkBox.innerHTML = ['<a download="wordtags.jpg" href="',imgBlob,'"> Download Word Tag</a>'].join('');
       linkBox.dataset.haslk = 'linkthere';
     }
-  };
-
-  window.wordScan = window.wordScan || {};
-	window.wordScan.canvasSetter = _canvasCalcThingZZ66;
+  }; 
+ return new CanvasTool;
+};
+ window.wordScanSet = window.wordScanSet || {};
+ window.wordScanSet.canvasSetter = _canvasCalcThingZZ66;
 })(window);

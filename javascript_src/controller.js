@@ -1,0 +1,1 @@
+['canvasSetter', 'workerSetter', 'domReadSetter','fileReadSetter', 'textProcSet']

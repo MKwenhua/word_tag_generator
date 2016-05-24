@@ -1,24 +1,24 @@
 (function(){
   "use strict";
-
+var wordScan = window.wordScan;
 var wordScanner = document.createElement('div');
 wordScanner.id = 'cheesyGorditaCrunch';
 wordScanner.className = 'not_on';
-wordScanner.innerHTML = _htmlStringsZZ66();
+wordScanner.innerHTML = wordScan.htmlInject();
 document.body.appendChild(wordScanner);
 var visBlock     = wordScanner.querySelector('#visBlockPete');
 var buttNav      = wordScanner.querySelector('.tacoSideNav');
-var ctxTool      = _canvasCalcThingZZ66(wordScanner);
-var sendToWorker = _setWorkerZZ66(ctxTool,visBlock);
-var filez        = _fileModuleZZ66(wordScanner);
+var ctxTool      = wordScan.canvasSetter(wordScanner);
+var sendToWorker = wordScan.workerSetter(ctxTool,visBlock);
+var filez        = wordScan.fileReadSetter(wordScanner);
 var scanner      = wordScanner.querySelector('#ZZ66_sl_tc');
-var _tools       = new _usefulFunctionsTaco;
-var taggs        = {current: null, tagLists: []};
-var wordAnalysis = _wordAnalysisZZ66(sendToWorker, ctxTool, function(nTag){
-	taggs.current = nTag;
-	taggs.tagLists.push(nTag);
+var _tools       = new wordScan.tools();
+window.wordScan.taggs   = {current: null, tagLists: []};
+var wordAnalysis = wordScan.textProcSet(sendToWorker, ctxTool, function(nTag){
+	window.wordScan.taggs.current = nTag;
+	window.wordScan.taggs.tagLists.push(nTag);
 });
-var proccessDom  = _domReadZZ66(wordAnalysis);
+var proccessDom  = wordScan.domReadSetter(wordAnalysis);
 function toggleNav(){
   	var b = buttNav.querySelector('.bt1_taco_show');
     if(b){b.classList.remove('bt1_taco_show');}

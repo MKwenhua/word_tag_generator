@@ -1,3 +1,6 @@
+(function (window) { 
+	'use strict';
+
 function _wordAnalysisZZ66(sendToWorker,ctxTool, updater){
 
 	function seriousWords(word) {return word.length >= 4 && /(http|https)/.test(word) === false;}
@@ -47,3 +50,8 @@ function _wordAnalysisZZ66(sendToWorker,ctxTool, updater){
 	};
 
 };
+
+ window.wordScan = window.wordScan || {};
+ window.wordScan.taggs   = {current: null, tagLists: []};
+ window.wordScan.textProcSet = _wordAnalysisZZ66;
+})(window);

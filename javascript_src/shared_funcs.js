@@ -1,4 +1,7 @@
-function UsefulFunctionsTaco(){
+(function (window) { 
+	'use strict';
+ window.wordScan = window.wordScan || {};
+window.wordScan.tools = function(){
 
 	function throttle (callback, limit) {
 	    var wait = false;
@@ -35,3 +38,5 @@ function UsefulFunctionsTaco(){
 		};
 
 };
+
+})(window);
