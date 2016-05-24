@@ -4,12 +4,12 @@
 
 	window.wordScan.textProcSet = function(sendToWorker,ctxTool){
 
-	function seriousWords(word) {return word.length >= 4 && /(http|https)/.test(word) === false;}
+		function seriousWords(word) {return word.length >= 4 && /(http|https)/.test(word) === false;}
 
-	function updater(nTag){
-		window.wordScan.taggs.current = nTag;
-		window.wordScan.taggs.tagLists.push(nTag);
-   };
+		function updater(nTag){
+			window.wordScan.taggs.current = nTag;
+			window.wordScan.taggs.tagLists.push(nTag);
+		};
 
 		function CountThing(){
 			this.biggestCount = 0;
@@ -42,16 +42,15 @@
 		};
 		function readtext(ct){
 			return ct.toLowerCase().match(/([a-z]+)/g).filter(seriousWords).reduce(countAholic, {});
-	};
+		};
+
 		return function(fl_content, fm_dom, txtName){
 			var wordList = new WordTag(fm_dom, txtName);
 			maxFq.biggestCount = 0;
-
-
-		var bod_text = fm_dom ? processDom(fl_content) : readtext(fl_content);
-		wordList.txtHash = { themax: maxFq.biggestCount,the_bod: bod_text ,cWidth: ctxTool.getWidth() , ratios: ctxTool.ratios};
-		wordList.createTag();
-		updater(wordList);
+			var bod_text = fm_dom ? processDom(fl_content) : readtext(fl_content);
+			wordList.txtHash = { themax: maxFq.biggestCount,the_bod: bod_text ,cWidth: ctxTool.getWidth() , ratios: ctxTool.ratios};
+			wordList.createTag();
+			updater(wordList);
 		};
 
 };

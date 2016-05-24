@@ -5,11 +5,11 @@
 		this.throttle = function(callback, limit) {
 			var wait = false;
 			return function () {
-	 			if (!wait) {
-	 				callback.call();
+				if (!wait) {
+					callback.call();
 					wait = true;
 					setTimeout(function () {
-	 					wait = false;
+						wait = false;
 					}, limit);
 				}
 		}
