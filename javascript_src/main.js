@@ -16,40 +16,40 @@
 	var textHiglighter = window.wordScan.selecter(scanner,wordScanner);
 	var proccessDom    = window.wordScan.domReadSet(wordAnalysis);
 
-	function toggleNav(){
+	function toggleNav() {
 		var b = buttNav.querySelector('.bt1_taco_show');
-		if(b){b.classList.remove('bt1_taco_show');}
+		if (b) {b.classList.remove('bt1_taco_show');}
 	};
 
 
-	function repaintWords(){
+	function repaintWords() {
 		ctxTool.recalc();
 		window.wordScan.taggs.current.redo();
 	};
 
 	window.wordScan.tools.addDebounce(window, repaintWords, 50, 'resize');
 
-	wordScanner.querySelector('img').onclick = function(){
-		if(wordScanner.classList.contains('not_on')){
+	wordScanner.querySelector('img').onclick = function() {
+		if ( wordScanner.classList.contains('not_on') ) {
 			wordScanner.className = 'is_on';
-		}else{
+		} else {
 			wordScanner.className = 'not_on';
 		}
 	};
 
-	wordScanner.querySelector('#peteTacoZZ').onclick = function(){
+	wordScanner.querySelector('#peteTacoZZ').onclick = function() {
 		visBlock.className = 'on_load_Z66';
 		proccessDom();
 	};
 
-	function checkScanner(){
+	function checkScanner() {
 
-		if(scanner.classList.contains('off_sele_t')){
+		if( scanner.classList.contains('off_sele_t') ) {
 			scanner.classList.remove('off_sele_t');
 			scanner.classList.add('on_sele_t');
 			textHiglighter.turnOn();
 		}
-		if(scanner.classList.contains('can_scan_zz66')){
+		if( scanner.classList.contains('can_scan_zz66') ) {
 			scanner.className = "selectIcon_taco off_sele_t";
 			wordScanner.className = 'is_on';
 			visBlock.className = 'on_results_Z66';
@@ -62,9 +62,9 @@
 
 	window.wordScan.tools.addDebounce(scanner, checkScanner, 200, 'click');
 
-	wordScanner.querySelector('#list_taco').onclick = function(e){
-		if(e.target.tagName === 'LI'){
-			if(e.target.dataset.clicked === 'no'){
+	wordScanner.querySelector('#list_taco').onclick = function(e) {
+		if (e.target.tagName === 'LI') {
+			if (e.target.dataset.clicked === 'no') {
 				e.preventDefault();
 				e.target.dataset.clicked = 'yes';
 				toggleNav();
@@ -76,8 +76,8 @@
 		}
 	};
 
-	buttNav.onclick = function(e){
-		if(!e.target.classList.contains('bt1_taco_show')){
+	buttNav.onclick = function(e) {
+		if ( !e.target.classList.contains('bt1_taco_show') ) {
 			toggleNav();
 			switch(e.target.dataset.wh) {
 				case 'canvas':
@@ -111,4 +111,5 @@
 			}
 		}
 	};
+	
 })(window);

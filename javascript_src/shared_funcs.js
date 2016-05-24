@@ -27,10 +27,10 @@
 				};
 		};
 	};
-	FsTools.prototype.addDebounce = function(elem, func, time, type){
+	FsTools.prototype.addDebounce = function(elem, func, time, type) {
 				elem.addEventListener(type, this.debounce(func, time));
 	};
-	FsTools.prototype.addThrottle = function(elem, func, time, type){
+	FsTools.prototype.addThrottle = function(elem, func, time, type) {
 			elem.addEventListener(type, this.debounce(func, time));
 	};
 

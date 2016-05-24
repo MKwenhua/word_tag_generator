@@ -2,7 +2,7 @@
 (function (window) {
 	'use strict';
 	window.wordScan = window.wordScan || {};
-	window.wordScan.selecter = function(scanner,wordScanner){
+	window.wordScan.selecter = function(scanner,wordScanner) {
 
 	function getHighlightedTxt() {
 		var parentEl = null, sel;
@@ -19,11 +19,12 @@
 		}
 		return parentEl.textContent;
 	}
+
 	function TextHighligher() {
 			var self = this;
 			window.addEventListener("mouseup", this, false);
 	}
-	TextHighligher.prototype.getHighlightedTxt = function(){
+	TextHighligher.prototype.getHighlightedTxt = function() {
 		var parentEl = null, sel;
 		if (window.getSelection) {
 				sel = window.getSelection();
@@ -38,21 +39,21 @@
 		}
 		return parentEl.textContent;
 	}
+
 	TextHighligher.prototype.highlightOn = false;
 	TextHighligher.prototype.selectedText = '';
-	TextHighligher.prototype.turnOff = function(){
+	TextHighligher.prototype.turnOff = function() {
 			this.highlightOn = false;
-
 	};
-	TextHighligher.prototype.turnOn = function(){
+	TextHighligher.prototype.turnOn = function() {
 		this.highlightOn = true;
 		wordScanner.className = 'scan_on';
 	};
 
 	TextHighligher.prototype.handleEvent = function(e) {
-		if(this.highlightOn){
+		if (this.highlightOn) {
 			var txtHlt = this.getHighlightedTxt();// window.getSelection().baseNode.textContent;
-			if(txtHlt.length > 10){
+			if (txtHlt.length > 10) {
 				this.selectedText = txtHlt;
 				console.log('textHiglighter.selectedText',this.selectedText);
 				scanner.classList.add("can_scan_zz66");
