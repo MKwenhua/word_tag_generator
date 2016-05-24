@@ -36,10 +36,10 @@
  window.wordScan.tools = new FsTools();
 
 })(window);
-(function (window) { 
+(function (window) {
 	'use strict';
 	window.wordScan = window.wordScan || {};
-	window.wordScan.htmlInject = function(){ 
+	window.wordScan.htmlInject = function(){
 	
   	var _selectButtonZZ66 = [
   	'<div id="ZZ66_sl_tc" data-tk="ZZ66" class="selectIcon_taco off_sele_t">',
