@@ -2,7 +2,7 @@
 	'use strict';
 	window.wordScan = window.wordScan || {};
 	function FsTools(){
-		this.throttle = function(callback, limit) {
+		this.throttle = function (callback, limit) {
 			var wait = false;
 			return function () {
 				if (!wait) {
@@ -14,7 +14,7 @@
 				}
 		}
 	}
-	this.debounce = function(func, wait, immediate) {
+	this.debounce = function (func, wait, immediate) {
 			var timeout;
 			return function() {
 				var context = this, args = arguments;
@@ -27,10 +27,10 @@
 				};
 		};
 	};
-	FsTools.prototype.addDebounce = function(elem, func, time, type) {
+	FsTools.prototype.addDebounce = function (elem, func, time, type) {
 				elem.addEventListener(type, this.debounce(func, time));
 	};
-	FsTools.prototype.addThrottle = function(elem, func, time, type) {
+	FsTools.prototype.addThrottle = function (elem, func, time, type) {
 			elem.addEventListener(type, this.debounce(func, time));
 	};
 

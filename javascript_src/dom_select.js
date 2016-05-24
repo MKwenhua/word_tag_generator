@@ -4,7 +4,7 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.selecter = function(scanner,wordScanner) {
+	window.wordScan.selecter = function (scanner,wordScanner) {
 
 	function getHighlightedTxt() {
 		var parentEl = null, sel;

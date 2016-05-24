@@ -3,7 +3,7 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.workerSet = function(ctxTool, visBlock) {
+	window.wordScan.workerSet = function (ctxTool, visBlock) {
 
 	var _worker = new Worker(window.URL.createObjectURL(new Blob([function() {
 
@@ -13,14 +13,14 @@
 			var maxCount = data.themax;
 			var ratios   = data.ratios;
 			var mxWid    = data.cWidth;
-			function capitalize(v) {
+			function capitalize (v) {
 				return v.charAt(0).toUpperCase() + v.slice(1);
 			};
 
-			function notTooTiny(freq) {
+			function notTooTiny (freq) {
 				return (freq/maxCount > 0.05);
 			};
-			function filterNew(aa,x) {
+			function filterNew (aa,x) {
 				if ( notTooTiny(data.the_bod[x]) ){ aa[x] = data.the_bod[x]; }
 					return aa;
 				};
@@ -42,12 +42,12 @@
 			maxHeight = maxHeight > 80 ? 80 : maxHeight;
 			var array_of_maxes = [];
 
-			function calcSpace(wid) {
+			function calcSpace (wid) {
 				level_space = level_space + maxFont;
 				array_of_maxes.push(maxFont);
 				return [ (wid) , Math.floor( ( (mxWid - 5) - wid)/(line_count - 1) ), level_space];
 			};
-			function checkIntegrity(passable) {
+			function checkIntegrity (passable) {
 				if (passable.lineWids.length < passable.wordLines.length ) {
 					passable.lineWids.push(calcSpace(width_used));
 				}

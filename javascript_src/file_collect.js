@@ -3,7 +3,7 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.fileReadSet = function(parEle) {
+	window.wordScan.fileReadSet = function (parEle) {
 		
 		var output_to = parEle.querySelector('#list_taco');
 		var dropZone = parEle.querySelector('#drop_zone_taco');
@@ -14,7 +14,7 @@
 		} else {
 			console.log('The File APIs are not fully supported in this browser.');
 		}
-		function readFile(f, fileNames) {
+		function readFile (f, fileNames) {
 			var r = new FileReader();
 				r.onload = function(e) {
 						var contents = e.target.result.replace(/\s+/g, " ");
@@ -23,7 +23,7 @@
 					}
 					r.readAsText(f);
 		};
-		function handleFileSelect(evt) {
+		function handleFileSelect (evt) {
 				evt.stopPropagation();
 				evt.preventDefault();
 
@@ -45,7 +45,7 @@
 
 		};
 
-		function handleDragOver(evt) {
+		function handleDragOver (evt) {
 			evt.stopPropagation();
 			evt.preventDefault();
 			evt.dataTransfer.dropEffect = 'copy';

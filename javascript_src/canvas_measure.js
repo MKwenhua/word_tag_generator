@@ -3,7 +3,7 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.canvasSet = function(parentEle) {
+	window.wordScan.canvasSet = function (parentEle) {
 		
 		var theCanvas = parentEle.querySelector('#wdFQcx');
 		var ctx       = theCanvas.getContext("2d");
@@ -30,7 +30,7 @@
 		function calcColor(pnct){
 			return 'rgb(0, ' + (170 - Math.ceil(150 * pnct )).toString() + ', 252)';
 		};
-	function paintWords(lineWords, wordSp, itter, callback ) {
+	function paintWords (lineWords, wordSp, itter, callback ) {
 		var offset_x = 6;
 		lineWords[itter].forEach(function(item, ii) {
 			ctx.font = item.fntSize + fontFam;
@@ -53,7 +53,7 @@
 
 	function CanvasTool() {
 		this.ratios = getRatios();
-		this.changeFont = function(newFNT) {
+		this.changeFont = function (newFNT) {
 			ctx.font = newFNT;
 			this.ratios = getRatios();
 		};
@@ -61,7 +61,7 @@
 		this.getWidth = function() {
 			return theCanvas.width;
 		};
-		this.paintResults = function(dta, visBlock) {
+		this.paintResults = function (dta, visBlock) {
 			var res = JSON.parse(dta);
 
 			console.log('paintResults',res);

@@ -3,11 +3,11 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.domReadSet = function(wordCount) {
+	window.wordScan.domReadSet = function (wordCount) {
 		
 		return function() {
 
-			function getText(arr,str ,ind, len) {
+			function getText (arr,str ,ind, len) {
 					if (ind < len) {
 						var tx = arr[ind].innerText.toLowerCase().match(/([a-z]+)/g);
 						getText(arr, tx ? str.concat(tx) : str, ind + 1, len);

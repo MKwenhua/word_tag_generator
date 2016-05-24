@@ -62,7 +62,7 @@
 	'use strict';
 	window.wordScan = window.wordScan || {};
 	function FsTools(){
-		this.throttle = function(callback, limit) {
+		this.throttle = function (callback, limit) {
 			var wait = false;
 			return function () {
 				if (!wait) {
@@ -74,7 +74,7 @@
 				}
 		}
 	}
-	this.debounce = function(func, wait, immediate) {
+	this.debounce = function (func, wait, immediate) {
 			var timeout;
 			return function() {
 				var context = this, args = arguments;
@@ -87,10 +87,10 @@
 				};
 		};
 	};
-	FsTools.prototype.addDebounce = function(elem, func, time, type) {
+	FsTools.prototype.addDebounce = function (elem, func, time, type) {
 				elem.addEventListener(type, this.debounce(func, time));
 	};
-	FsTools.prototype.addThrottle = function(elem, func, time, type) {
+	FsTools.prototype.addThrottle = function (elem, func, time, type) {
 			elem.addEventListener(type, this.debounce(func, time));
 	};
 
@@ -186,7 +186,7 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.canvasSet = function(parentEle) {
+	window.wordScan.canvasSet = function (parentEle) {
 		
 		var theCanvas = parentEle.querySelector('#wdFQcx');
 		var ctx       = theCanvas.getContext("2d");
@@ -213,7 +213,7 @@
 		function calcColor(pnct){
 			return 'rgb(0, ' + (170 - Math.ceil(150 * pnct )).toString() + ', 252)';
 		};
-	function paintWords(lineWords, wordSp, itter, callback ) {
+	function paintWords (lineWords, wordSp, itter, callback ) {
 		var offset_x = 6;
 		lineWords[itter].forEach(function(item, ii) {
 			ctx.font = item.fntSize + fontFam;
@@ -236,7 +236,7 @@
 
 	function CanvasTool() {
 		this.ratios = getRatios();
-		this.changeFont = function(newFNT) {
+		this.changeFont = function (newFNT) {
 			ctx.font = newFNT;
 			this.ratios = getRatios();
 		};
@@ -244,7 +244,7 @@
 		this.getWidth = function() {
 			return theCanvas.width;
 		};
-		this.paintResults = function(dta, visBlock) {
+		this.paintResults = function (dta, visBlock) {
 			var res = JSON.parse(dta);
 
 			console.log('paintResults',res);
@@ -280,13 +280,13 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.textProcSet = function(sendToWorker,ctxTool) {
+	window.wordScan.textProcSet = function (sendToWorker,ctxTool) {
 
-		function seriousWords(word) {
+		function seriousWords (word) {
 			return word.length >= 4 && /(http|https)/.test(word) === false;
 		}
 
-		function updater(nTag) {
+		function updater (nTag) {
 			window.wordScan.taggs.addTag(nTag,nTag.namee);
 			
 		};
@@ -299,7 +299,7 @@
 		};
 		var maxFq = new CountThing();
 
-		function WordTag(isFile, name) {
+		function WordTag (isFile, name) {
 			WordTag.numOf = (WordTag.numOf || 0) + 1;
 			this.txtHash = null;
 			this.tagindex = WordTag.numOf;
@@ -314,15 +314,15 @@
 			};
 		};
 
-		function countAholic(obb, word) {
+		function countAholic (obb, word) {
 			obb[word] = obb[word] === undefined ? 1 : obb[word] + 1; maxFq.check_mx(obb[word]);
 				return obb;
 			};
 
-		function processDom(str) {
+		function processDom (str) {
 			return str.filter(seriousWords).reduce(countAholic, {});
 		};
-		function readtext(ct) {
+		function readtext (ct) {
 			return ct.toLowerCase().match(/([a-z]+)/g).filter(seriousWords).reduce(countAholic, {});
 		};
 
@@ -345,11 +345,11 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.domReadSet = function(wordCount) {
+	window.wordScan.domReadSet = function (wordCount) {
 		
 		return function() {
 
-			function getText(arr,str ,ind, len) {
+			function getText (arr,str ,ind, len) {
 					if (ind < len) {
 						var tx = arr[ind].innerText.toLowerCase().match(/([a-z]+)/g);
 						getText(arr, tx ? str.concat(tx) : str, ind + 1, len);
@@ -375,7 +375,7 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.selecter = function(scanner,wordScanner) {
+	window.wordScan.selecter = function (scanner,wordScanner) {
 
 	function getHighlightedTxt() {
 		var parentEl = null, sel;
@@ -444,7 +444,7 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.fileReadSet = function(parEle) {
+	window.wordScan.fileReadSet = function (parEle) {
 		
 		var output_to = parEle.querySelector('#list_taco');
 		var dropZone = parEle.querySelector('#drop_zone_taco');
@@ -455,7 +455,7 @@
 		} else {
 			console.log('The File APIs are not fully supported in this browser.');
 		}
-		function readFile(f, fileNames) {
+		function readFile (f, fileNames) {
 			var r = new FileReader();
 				r.onload = function(e) {
 						var contents = e.target.result.replace(/\s+/g, " ");
@@ -464,7 +464,7 @@
 					}
 					r.readAsText(f);
 		};
-		function handleFileSelect(evt) {
+		function handleFileSelect (evt) {
 				evt.stopPropagation();
 				evt.preventDefault();
 
@@ -486,7 +486,7 @@
 
 		};
 
-		function handleDragOver(evt) {
+		function handleDragOver (evt) {
 			evt.stopPropagation();
 			evt.preventDefault();
 			evt.dataTransfer.dropEffect = 'copy';
@@ -504,7 +504,7 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.workerSet = function(ctxTool, visBlock) {
+	window.wordScan.workerSet = function (ctxTool, visBlock) {
 
 	var _worker = new Worker(window.URL.createObjectURL(new Blob([function() {
 
@@ -514,14 +514,14 @@
 			var maxCount = data.themax;
 			var ratios   = data.ratios;
 			var mxWid    = data.cWidth;
-			function capitalize(v) {
+			function capitalize (v) {
 				return v.charAt(0).toUpperCase() + v.slice(1);
 			};
 
-			function notTooTiny(freq) {
+			function notTooTiny (freq) {
 				return (freq/maxCount > 0.05);
 			};
-			function filterNew(aa,x) {
+			function filterNew (aa,x) {
 				if ( notTooTiny(data.the_bod[x]) ){ aa[x] = data.the_bod[x]; }
 					return aa;
 				};
@@ -543,12 +543,12 @@
 			maxHeight = maxHeight > 80 ? 80 : maxHeight;
 			var array_of_maxes = [];
 
-			function calcSpace(wid) {
+			function calcSpace (wid) {
 				level_space = level_space + maxFont;
 				array_of_maxes.push(maxFont);
 				return [ (wid) , Math.floor( ( (mxWid - 5) - wid)/(line_count - 1) ), level_space];
 			};
-			function checkIntegrity(passable) {
+			function checkIntegrity (passable) {
 				if (passable.lineWids.length < passable.wordLines.length ) {
 					passable.lineWids.push(calcSpace(width_used));
 				}

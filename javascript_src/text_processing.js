@@ -3,13 +3,13 @@
 
 	window.wordScan = window.wordScan || {};
 
-	window.wordScan.textProcSet = function(sendToWorker,ctxTool) {
+	window.wordScan.textProcSet = function (sendToWorker,ctxTool) {
 
-		function seriousWords(word) {
+		function seriousWords (word) {
 			return word.length >= 4 && /(http|https)/.test(word) === false;
 		}
 
-		function updater(nTag) {
+		function updater (nTag) {
 			window.wordScan.taggs.addTag(nTag,nTag.namee);
 			
 		};
@@ -22,7 +22,7 @@
 		};
 		var maxFq = new CountThing();
 
-		function WordTag(isFile, name) {
+		function WordTag (isFile, name) {
 			WordTag.numOf = (WordTag.numOf || 0) + 1;
 			this.txtHash = null;
 			this.tagindex = WordTag.numOf;
@@ -37,15 +37,15 @@
 			};
 		};
 
-		function countAholic(obb, word) {
+		function countAholic (obb, word) {
 			obb[word] = obb[word] === undefined ? 1 : obb[word] + 1; maxFq.check_mx(obb[word]);
 				return obb;
 			};
 
-		function processDom(str) {
+		function processDom (str) {
 			return str.filter(seriousWords).reduce(countAholic, {});
 		};
-		function readtext(ct) {
+		function readtext (ct) {
 			return ct.toLowerCase().match(/([a-z]+)/g).filter(seriousWords).reduce(countAholic, {});
 		};
 
