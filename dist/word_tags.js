@@ -99,6 +99,62 @@
 })(window);
 (function (window) {
 	'use strict';
+window.ctxThing = function(prnEl){
+var canvasDiv = prnEl.querySelector('#ctxZZ66');
+var theVas = canvasDiv.querySelector('#ctxPreview');
+var colorInput = canvasDiv.querySelector('#clZZ66');
+var rdGrnBlu = [0, 70, 255];
+var fontfam =  "Oswald,sans-serif";
+function convertHex(hex){
+   var r = parseInt(hex.substring(1,3), 16);
+   var g = parseInt(hex.substring(3,5), 16);
+   var b = parseInt(hex.substring(5,7), 16);
+   return [r,g,b];
+}
+function gaM(red, green, blue, gamma){
+	var rgB = [];
+	rgB[0] = Math.pow(255 * (red / 255), gamma);
+	rgB[1] = Math.pow(255 * (green / 255), gamma);
+	rgB[2] = Math.pow(255 * (blue / 255), gamma);
+	return rgB;
+}
+function gammaAdjust(num){
+ 	var gM = 1/(num/50.0);
+ 	var rgB = gaM(rdGrnBlu[0],rdGrnBlu[1],rdGrnBlu[2], gM);
+ 	console.log('rgb(' + rgB.join() + ' )');
+ 	return 'rgb(' + rgB.join() + ' )';
+}
+
+
+var ctxP = theVas.getContext("2d");
+var textWords = 'FRAZZLED'.split('');
+
+
+function rePaint(clr){
+	var leftOff = 5;
+	ctxP.clearRect(0, 0, 180, 55);
+	rdGrnBlu = convertHex(clr);
+	[50,42,38,26,20,14,8].forEach(function(num, ind){
+		var ft = String(num) + 'px ' + fontfam;
+	  
+	  console.log(ft);
+	  var lttr = textWords[ind];
+	  ctxP.font = ft;
+	  ctxP.fillStyle = gammaAdjust(num);
+	  ctxP.fillText(lttr, leftOff, 46);
+	  leftOff += (4 + ctxP.measureText(lttr).width);
+	});
+};
+canvasDiv.querySelector('#previewColorZZ66').onclick = function(){
+	console.log(colorInput.value);
+	console.log(convertHex(colorInput.value));
+	gammaAdjust(rePaint(colorInput.value));
+};
+};
+
+})(window);
+(function (window) {
+	'use strict';
 	window.wordScan = window.wordScan || {};
 	window.wordScan.htmlInject = function() {
 
@@ -150,7 +206,17 @@
     '</div>'
     ].join('');
 
-    var configCanvasZZ66 = '<div data-tk="ZZ66" class="pete_demo_settings"><h6>Settings comming soon</h6></div>';
+  var configCanvasZZ66 = [
+  '<div data-tk="ZZ66" class="pete_demo_settings">',
+  '<div id="ctxZZ66">',
+  	'<div id="canvasPreviewZZ66">',
+  			'<canvas id="ctxPreview" height="55" width="180" ></canvas>',
+  	'</div>',
+  	'<form><input id="clZZ66" type="color" name="favcolor" value="#001efc"></form>',
+  	'<button id="previewColorZZ66">check</button>',
+  	'</div>',
+  	'<h6>Settings comming soon</h6>',
+  '</div>'].join('');
 
   var creditsDivZZ66 = ['<div class="current_tags_images">','<div id="wordTagWrap">',
   	'<h3>No History</h3>','</div>',
@@ -191,7 +257,7 @@
 		var theCanvas = parentEle.querySelector('#wdFQcx');
 		var ctx       = theCanvas.getContext("2d");
 		var linkBox   = parentEle.querySelector('.c_d_taco');
-		var fontFam   = window.getComputedStyle(document.body, null )['font-family'] || "Oswald,sans-serif;";
+		var fontFam   = window.getComputedStyle(document.body, null )['font-family'] || "Oswald,sans-serif";
 		var maxHeight = screen.availHeight - 158;
 		function calcDimensions() {
 			var snWd = window.innerWidth;
@@ -617,6 +683,7 @@
 	wordScanner.className = 'not_on';
 	wordScanner.innerHTML = window.wordScan.htmlInject();
 	document.body.appendChild(wordScanner);
+	window.ctxThing(wordScanner);
 	var visBlock       = wordScanner.querySelector('#visBlockPete');
 	var buttNav        = wordScanner.querySelector('.tacoSideNav');
 	var scanner        = wordScanner.querySelector('#ZZ66_sl_tc');

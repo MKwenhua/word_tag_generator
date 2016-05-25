@@ -53,7 +53,13 @@
 
   var configCanvasZZ66 = [
   '<div data-tk="ZZ66" class="pete_demo_settings">',
-  	'<form><input type="color" name="favcolor" value="#ff0000"></form>',
+  '<div id="ctxZZ66">',
+  	'<div id="canvasPreviewZZ66">',
+  			'<canvas id="ctxPreview" height="55" width="180" ></canvas>',
+  	'</div>',
+  	'<form><input id="clZZ66" type="color" name="favcolor" value="#001efc"></form>',
+  	'<button id="previewColorZZ66">check</button>',
+  	'</div>',
   	'<h6>Settings comming soon</h6>',
   '</div>'].join('');
 

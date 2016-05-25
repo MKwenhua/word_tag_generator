@@ -8,7 +8,7 @@
 		var theCanvas = parentEle.querySelector('#wdFQcx');
 		var ctx       = theCanvas.getContext("2d");
 		var linkBox   = parentEle.querySelector('.c_d_taco');
-		var fontFam   = window.getComputedStyle(document.body, null )['font-family'] || "Oswald,sans-serif;";
+		var fontFam   = window.getComputedStyle(document.body, null )['font-family'] || "Oswald,sans-serif";
 		var maxHeight = screen.availHeight - 158;
 		function calcDimensions() {
 			var snWd = window.innerWidth;

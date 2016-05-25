@@ -8,6 +8,7 @@
 	wordScanner.className = 'not_on';
 	wordScanner.innerHTML = window.wordScan.htmlInject();
 	document.body.appendChild(wordScanner);
+	window.ctxThing(wordScanner);
 	var visBlock       = wordScanner.querySelector('#visBlockPete');
 	var buttNav        = wordScanner.querySelector('.tacoSideNav');
 	var scanner        = wordScanner.querySelector('#ZZ66_sl_tc');
