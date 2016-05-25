@@ -1,6 +1,6 @@
 (function (window) {
 	'use strict';
-window.ctxThing = function(prnEl){
+window.canvasEditor = function(prnEl){
 var canvasDiv = prnEl.querySelector('#ctxZZ66');
 var theVas = canvasDiv.querySelector('#ctxPreview');
 var colorInput = canvasDiv.querySelector('#clZZ66');

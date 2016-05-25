@@ -1,14 +1,11 @@
 (function(window){
   "use strict";
 
-  //window.wordScan.taggs   = {current: null, tagLists: []};
-
 	var wordScanner = document.createElement('div');
 	wordScanner.id = 'cheesyGorditaCrunch';
 	wordScanner.className = 'not_on';
 	wordScanner.innerHTML = window.wordScan.htmlInject();
 	document.body.appendChild(wordScanner);
-	window.ctxThing(wordScanner);
 	var visBlock       = wordScanner.querySelector('#visBlockPete');
 	var buttNav        = wordScanner.querySelector('.tacoSideNav');
 	var scanner        = wordScanner.querySelector('#ZZ66_sl_tc');
@@ -19,6 +16,7 @@
 	var textHiglighter = window.wordScan.selecter(scanner,wordScanner);
 	var proccessDom    = window.wordScan.domReadSet(wordAnalysis);
   window.wordScan.taggs.tagContainer = wordScanner.querySelector('#wordTagWrap');
+  window.canvasEditor(wordScanner);
 
 	function toggleNav() {
 		var b = buttNav.querySelector('.bt1_taco_show');
