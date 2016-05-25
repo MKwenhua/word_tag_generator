@@ -16,7 +16,7 @@
 
     function gaM (red, green, blue, gamma) {
       var rgB = [];
-      /*	rgB[0] = Math.pow(255 * (red / 255), gamma);
+      /*rgB[0] = Math.pow(255 * (red / 255), gamma);
       	rgB[1] = Math.pow(255 * (green / 255), gamma);
       	rgB[2] = Math.pow(255 * (blue / 255), gamma); */
       rgB[0] = Math.pow(red, gamma);
