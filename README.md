@@ -1,3 +1,3 @@
 # word_tag_generator
 
-![Project Preview](https://s3.amazonaws.com/canvasmp3/word_tag_challenge.gif)
+![Alt Text](https://media.giphy.com/media/l0HUncBUtCxtxNFG8/giphy.gif)
